@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_live_streaming_app/util/utils.dart';
+import 'package:flutter_live_streaming_app/view/callpages/group_call_page.dart';
 
 String generatePassword({int length = 8}) {
   const String chars =
@@ -22,14 +24,17 @@ class _HostJoinState extends State<HostJoin> {
   late TextEditingController _controller;
   @override
   void initState() {
-    _controller=TextEditingController();
+    _controller = TextEditingController();
+    _controller.text = generatePassword().toString();
     super.initState();
   }
+
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,7 +47,7 @@ class _HostJoinState extends State<HostJoin> {
               style: TextStyle(color: Colors.black),
             ),
             SelectableText(
-              generatePassword().toString(),
+              _controller.text.toString(),
               style: const TextStyle(color: Colors.grey),
             ),
           ],
@@ -53,6 +58,7 @@ class _HostJoinState extends State<HostJoin> {
         Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: TextField(
+          
             controller: _controller,
             style: const TextStyle(fontSize: 20),
             decoration: InputDecoration(
@@ -72,7 +78,18 @@ class _HostJoinState extends State<HostJoin> {
         ElevatedButton(
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.green)),
-            onPressed: () {},
+            onPressed: () {
+              if (_controller.text.isNotEmpty) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GroupCallPage(
+                              callId: _controller.text.toString(),
+                              userID: Utils.userid.toString(),
+                              userName: Utils.userid.toString(),
+                            )));
+              }
+            },
             child: const Text(
               "Join as a host",
               style: TextStyle(color: Colors.white),
