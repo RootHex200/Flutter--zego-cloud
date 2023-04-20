@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716996304613",
+    "project_id": "audio-video-a046d",
+    "storage_bucket": "audio-video-a046d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716996304613:android:d6dde949bcfaa43435be0c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_live_streaming_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716996304613-2oe20dcinr3gk1e6ubbgr8es6ekhcnf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBokIjzW8rWjOKSnkp3pwPGN2yZmvQAtxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716996304613-2oe20dcinr3gk1e6ubbgr8es6ekhcnf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
